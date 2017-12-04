@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sfbest.platform.dao.MerchantMapper" >
+  <resultMap id="BaseResultMap" type="com.sfbest.platform.domain.MerchantInfo" >
+    <id column="merchant_id" property="merchantId" jdbcType="INTEGER" />
+    <result column="merchant_number" property="merchantNumber" jdbcType="INTEGER" />
+    <result column="name" property="merchantName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    merchant_id,merchant_number,name
+  </sql>
+  <select id="getMerchant" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from pl_merchant
+    where merchant_id = #{merchantId,jdbcType=INTEGER}
+  </select>
+ 
+</mapper>
