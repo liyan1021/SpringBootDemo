@@ -19,7 +19,7 @@ import com.github.pagehelper.PageHelper;
 
 @Configuration
 @EnableTransactionManagement
-public class MyBatisConfiguration implements TransactionManagementConfigurer{
+public class MybatisConfig implements TransactionManagementConfigurer{
 	@Autowired
     private DataSource dataSource;
 

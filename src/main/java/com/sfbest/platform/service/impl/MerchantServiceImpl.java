@@ -11,6 +11,7 @@ import com.sfbest.platform.service.MerchantService;
 public class MerchantServiceImpl  implements MerchantService{
 	@Autowired
 	private MerchantMapper merchantMapper;
+	
 	@Override
 	public MerchantInfo getMerchant() {
 		return merchantMapper.getMerchant(1);

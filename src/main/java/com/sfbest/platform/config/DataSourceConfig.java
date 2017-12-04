@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:config/application.properties")
 public class DataSourceConfig {
 	@Value("${spring.datasource.driverClassName}")
 	private String driver;
@@ -26,25 +26,23 @@ public class DataSourceConfig {
 	private int initialSize ;
 	@Value("${spring.datasource.minIdle}")
 	private int minIdle ;
-	@Value("${spring.datasource.max-active}")
+	@Value("${spring.datasource.maxActive}")
 	private int maxActive;
-	@Value("${spring.datasource.max-idle}")
-	private int maxIdel;
-	@Value("${spring.datasource.max-maxWait}")
+	@Value("${spring.datasource.maxWait}")
 	private long maxWait;
-	@Value("${spring.datasource.max-timeBetweenEvictionRunsMillis}")
+	@Value("${spring.datasource.timeBetweenEvictionRunsMillis}")
 	private long timeBetweenEvictionRunsMillis ; 
-	@Value("${spring.datasource.max-minEvictableIdleTimeMillis}")
+	@Value("${spring.datasource.minEvictableIdleTimeMillis}")
 	private long minEvictableIdleTimeMillis ; 
-	@Value("${spring.datasource.max-validationQuery}")
+	@Value("${spring.datasource.validationQuery}")
 	private String validationQuery ;
-	@Value("${spring.datasource.max-testWhileIdle}")
+	@Value("${spring.datasource.testWhileIdle}")
 	private boolean testWhileIdle ;
-	@Value("${spring.datasource.max-testOnBorrow}")
+	@Value("${spring.datasource.testOnBorrow}")
 	private boolean testOnBorrow ;
-	@Value("${spring.datasource.max-testOnReturn}")
+	@Value("${spring.datasource.testOnReturn}")
 	private boolean testOnReturn ;
-	@Value("${spring.datasource.max-filters}")
+	@Value("${spring.datasource.filters}")
 	private String filters ;
 	@Bean
 	public DataSource dataSource() {

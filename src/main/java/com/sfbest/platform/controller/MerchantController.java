@@ -11,7 +11,8 @@ import com.sfbest.platform.service.MerchantService;
 @RequestMapping(value = "/merchant")
 public class MerchantController {
 	@Autowired
-	private MerchantService merchantSercice ; 
+	private MerchantService merchantSercice;
+	
 	@RequestMapping("/")
 	public String home(){
 		MerchantInfo merchant = this.merchantSercice.getMerchant();
