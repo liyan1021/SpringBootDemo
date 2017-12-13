@@ -5,16 +5,17 @@ import org.springframework.stereotype.Service;
 
 import com.sfbest.platform.dao.MerchantMapper;
 import com.sfbest.platform.domain.MerchantInfo;
-import com.sfbest.platform.service.MerchantService;
+import com.sfbest.platform.service.MerchantInfoService;
 
 @Service
-public class MerchantServiceImpl  implements MerchantService{
+public class MerchantInfoServiceImpl  implements MerchantInfoService{
+	
 	@Autowired
 	private MerchantMapper merchantMapper;
 	
 	@Override
-	public MerchantInfo getMerchant() {
-		return merchantMapper.getMerchant(1);
+	public MerchantInfo getMerchant(Integer merchantNumber) {
+		return merchantMapper.getMerchant(merchantNumber);
 	}
 	
 }

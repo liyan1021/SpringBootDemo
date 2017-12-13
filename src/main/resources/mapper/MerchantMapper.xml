@@ -13,7 +13,7 @@
     select 
     <include refid="Base_Column_List" />
     from pl_merchant
-    where merchant_id = #{merchantId,jdbcType=INTEGER}
+    where merchant_number = #{merchantNumber,jdbcType=INTEGER}
   </select>
  
 </mapper>
